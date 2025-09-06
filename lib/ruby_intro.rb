@@ -4,7 +4,12 @@
 
 def sum(arr)
   # YOUR CODE HERE
-  0
+  res = 0
+  for i in arr do
+    # puts i
+    res += i
+  end
+  return res
 end
 
 def max_2_sum(arr)
