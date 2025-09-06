@@ -33,25 +33,25 @@ end
 def sum_to_n?(arr, number)
   # YOUR CODE HERE
   number_table = {}
-  for value in arr do
-    if number_table.key?(value):
+  arr.each do |value|
+    if number_table.key?(value)
       number_table[value] +=1
     else
       number_table[value] =1
     end
   end
   
-  for k in number_table.keys do
-    if number==k*2
+  number_table.keys.each do |k|
+    if number == k*2
       if number_table[k]>=2
         return true
       end
-    elsif number_table.fetch(number-k,0)>=1:
+    elsif number_table.fetch(number-k,0)>=1
       return true
     end
+  end
   return false
 end
-
 # Part 2
 
 def hello(name)
