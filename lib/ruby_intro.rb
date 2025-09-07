@@ -93,11 +93,15 @@ class BookInStock
   end
 
   def isbn=(isbn)
-    @isbn = isbn
+    if !isbn.empty?
+      @isbn = isbn  
+    end
   end
 
   def price=(price)
-    @price = price
+    if price>0
+      @price = price
+    end
   end
 
   def price_as_string()
