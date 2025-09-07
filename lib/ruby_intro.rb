@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'set'
 
 # Part 1
 
@@ -52,19 +53,24 @@ def sum_to_n?(arr, number)
   end
   return false
 end
+
 # Part 2
 
 def hello(name)
   # YOUR CODE HERE
+  return "Hello, " + name
 end
 
 def starts_with_consonant?(string)
   # YOUR CODE HERE
+  return /\A[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/.match?(string)
 end
 
 def binary_multiple_of_4?(string)
   # YOUR CODE HERE
+  return (/00\z/.match?(string) && (string[0..-3].include?("1")) && /\A\d+\z/.match?(string)) || string=="0"
 end
+# puts /\A0\z/.match?("0977")
 
 # Part 3
 
