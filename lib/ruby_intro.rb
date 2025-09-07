@@ -100,8 +100,18 @@ class BookInStock
     @price = price
   end
 
-  # def BookInStock()
-
-  # end
+  def price_as_string()
+    price_string = @price.to_s
+    if price_string.include?(".")
+      if price_string[-1]=="."
+        price_string += "00"
+      elsif price_string[-2]=="."
+        price_string += "0"
+      end
+    else
+      price_string += ".00"
+    end
+    return "$" + price_string
+  end
 
 end
