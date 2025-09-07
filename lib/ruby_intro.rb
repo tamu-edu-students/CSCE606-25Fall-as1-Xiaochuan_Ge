@@ -70,11 +70,30 @@ def binary_multiple_of_4?(string)
   # YOUR CODE HERE
   return (/00\z/.match?(string) && (string[0..-3].include?("1")) && /\A\d+\z/.match?(string)) || string=="0"
 end
-# puts /\A0\z/.match?("0977")
 
 # Part 3
 
 # Object representing a book
 class BookInStock
   # YOUR CODE HERE
+  def initialize(isbn, price)
+    @isbn = isbn
+    @price = price
+  end
+
+  def isbn
+    @isbn
+  end
+
+  def price
+    @price
+  end
+
+  def isbn=(isbn)
+    @isbn = isbn
+  end
+
+  def price=(price)
+    @price = price
+  end
 end
